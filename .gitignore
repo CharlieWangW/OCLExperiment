@@ -1,8 +1,7 @@
-﻿__pycache__/
+__pycache__/
 *.py[cod]
 .venv/
 outputs/
 toy_ocl_data/
 external/
 ObjectConceptLearning/
-ocl_coco_subset/

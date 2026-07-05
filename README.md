@@ -1,4 +1,4 @@
-﻿# OCL CLIP Inference Experiment
+# OCL CLIP Inference Experiment
 
 This repository contains a small zero-shot CLIP inference experiment for Object Concept Learning (OCL). It includes:
 
@@ -30,9 +30,19 @@ pip install -r requirements.txt
 python check_environment.py
 ```
 
-## Build A Small Real Subset
+## Included Small Real Subset
 
-The repository does not include COCO images or OCL annotation files. To build the small subset locally, first clone the official OCL repository and download COCO `val2014.zip`:
+This repository includes `ocl_coco_subset/`, a tiny real COCO/OCL subset for local smoke tests:
+
+- 20 real COCO `val2014` images
+- 40 object samples
+- top 10 object categories
+- 4 samples per category
+- generated from official OCL annotations and COCO images
+
+The subset is enough to validate the Dataset/DataLoader and run a small CLIP inference pass without SSH access to the school server.
+
+To rebuild the subset from the official sources, clone the official OCL repository and download COCO `val2014.zip`:
 
 - OCL official repo: https://github.com/silicx/ObjectConceptLearning
 - COCO images: http://images.cocodataset.org/zips/val2014.zip
@@ -49,7 +59,7 @@ python make_ocl_coco_subset.py \
   --per-category 4
 ```
 
-This creates `ocl_coco_subset/`, a small local dataset with real COCO images and OCL annotations. It is ignored by git.
+This recreates `ocl_coco_subset/`, a small local dataset with real COCO images and OCL annotations.
 
 ## Run The Small Subset
 
